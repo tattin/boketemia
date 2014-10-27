@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="js/jquery.1.11.1.min.js"></script>
+<script src="js/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="css/jquery-ui.css" />
+<style>
+#guage_area {
+    margin: 0;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    background-color: #00ccff;
+}
+#guage {
+    width: 50%;
+    height: 40px;
+    background-color: #ffcc00;
+}
+#left_guage {
+}
+</style>
+<script>
+$(function(){
+
+    $("#btn_attack").on("click", function(){
+        var attack_power = $("#left_guage").val() + "%";
+        $("#guage").animate({
+            "width": attack_power
+        }, 5000, "easeInOutBounce");
+    });
+
+});
+</script>
+</head>
+<body>
+<section id="guage_area">
+    <div id="guage"></div>
+</section>
+<section id="input_area">
+    <input type="text" name="left_guage" id="left_guage" size="20" placeholder="max:100 / min:0" />
+    <button id="btn_attack">ATTACK!!</button>
+</section>
+</body>
+</html>
